@@ -1,0 +1,29 @@
+# textdomain:library
+
+Bookshelf=
+Nonfiction @1=
+Old @1=
+Empty @1=
+Shelf=
+Antique Bookshelf Top=
+Antique Bookshelf=
+Corner=
+Inside Corner=
+Card Catalogue=
+Red @1=
+Green @1=
+Cyan @1=
+Purple @1=
+Black @1=
+Orange @1=
+Brown @1=
+ by =
+Book=
+Book With Text=
+Wood Pulp=
+Title:=
+Contents:=
+Save=
+by =
+Page =
+ of =

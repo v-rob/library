@@ -1,6 +1,6 @@
 
 -- Used for localization
-local S = minetest.get_translator()
+local S = minetest.get_translator("library")
 
 local bookshelf_formspec =
 	"size[8,7;]" ..
@@ -619,7 +619,7 @@ minetest.register_node("library:empty_shelf_2", {
 })
 
 minetest.register_node("library:antique_bookshelf_1", {
-	description = S("Antique @1", S("Bookshelf Top")),
+	description = S("Antique Bookshelf Top"),
 	tiles = {"default_wood.png",
 			"default_wood.png",
 			"default_wood.png",
@@ -680,7 +680,7 @@ minetest.register_node("library:antique_bookshelf_1", {
 })
 
 minetest.register_node("library:antique_bookshelf_2", {
-	description = S("Antique", S("Bookshelf")),
+	description = S("Antique Bookshelf"),
 	tiles = {"default_wood.png",
 			"default_wood.png",
 			"default_wood.png",
@@ -736,7 +736,7 @@ minetest.register_node("library:antique_bookshelf_2", {
 })
 
 minetest.register_node("library:antique_bookshelf_3", {
-	description = S("Antique", S("Bookshelf")),
+	description = S("Antique Bookshelf"),
 	tiles = {"default_wood.png",
 			"default_wood.png",
 			"default_wood.png",
@@ -797,7 +797,7 @@ minetest.register_node("library:antique_bookshelf_3", {
 })
 
 minetest.register_node("library:antique_bookshelf_4", {
-	description = S("Antique", S("Bookshelf")),
+	description = S("Antique Bookshelf"),
 	tiles = {"default_wood.png",
 			"default_wood.png",
 			"default_wood.png",
@@ -1302,25 +1302,34 @@ local function book_on_use(itemstack, user)
 	end
 
 	local formspec
+
+	-- These variables are used by the engine's translator.
+	local s_Title = S("Title:")
+	local s_Contents = S("Contents:")
+	local s_Save = S("Save")
+	local s_Author = S("by ")
+	local s_Page = S("Page ")
+	local s_PageOf = S(" of ")
+
 	if owner == player_name then
 		formspec = "size[8,8]" .. default.gui_bg ..
 			default.gui_bg_img ..
-			"field[0.5,1;7.5,0;title;Title:;" ..
+			"field[0.5,1;7.5,0;title;" .. s_Title .. ";" ..
 				minetest.formspec_escape(title) .. "]" ..
-			"textarea[0.5,1.5;7.5,7;text;Contents:;" ..
+			"textarea[0.5,1.5;7.5,7;text;" .. s_Contents .. ";" ..
 				minetest.formspec_escape(text) .. "]" ..
-			"button_exit[2.5,7.5;3,1;save;Save]"
+			"button_exit[2.5,7.5;3,1;save;" .. s_Save .. "]"
 	else
 		formspec = "size[8,8]" .. default.gui_bg ..
 			default.gui_bg_img ..
-			"label[0.5,0.5;by " .. owner .. "]" ..
+			"label[0.5,0.5;".. s_Author .. owner .. "]" ..
 			"tablecolumns[color;text]" ..
 			"tableoptions[background=#00000000;highlight=#00000000;border=false]" ..
 			"table[0.4,0;7,0.5;title;#FFFF00," .. minetest.formspec_escape(title) .. "]" ..
 			"textarea[0.5,1.5;7.5,7;;" ..
 				minetest.formspec_escape(string ~= "" and string or text) .. ";]" ..
 			"button[2.4,7.6;0.8,0.8;book_prev;<]" ..
-			"label[3.2,7.7;Page " .. page .. " of " .. page_max .. "]" ..
+			"label[3.2,7.7;" .. s_Page .. page .. s_PageOf .. page_max .. "]" ..
 			"button[4.9,7.6;0.8,0.8;book_next;>]"
 	end
 
@@ -1354,7 +1363,7 @@ minetest.register_on_player_receive_fields(function(player, formname, fields)
 		if not data then data = {} end
 		data.title = fields.title
 		data.owner = player:get_player_name()
-		data.description = "\""..fields.title.."\" by "..data.owner
+		data.description = "\""..fields.title.."\""..S(" by ")..data.owner
 		data.text = fields.text
 		data.text_len = #data.text
 		data.page = 1
@@ -1400,15 +1409,17 @@ minetest.register_on_player_receive_fields(function(player, formname, fields)
 	player:set_wielded_item(stack)
 end)
 
+	local s_TranslatorHelper = color .. " @1"
+
 minetest.register_craftitem("library:book_"..color, {
-	description = color..S(" Book"),
+	description = S(s_TranslatorHelper, S("Book")),
 	inventory_image = "library_book_"..color..".png",
 	groups = {book = 1, flammable = 3},
 	on_use = book_on_use,
 })
 
 minetest.register_craftitem("library:book_"..color.."_written", {
-	description = color..S(" Book With Text"),
+	description = S(s_TranslatorHelper, S("Book With Text")),
 	inventory_image = "library_book_"..color.."_written.png",
 	groups = {book = 1, not_in_creative_inventory = 1, flammable = 3},
 	stack_max = 1,

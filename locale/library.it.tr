@@ -1,0 +1,30 @@
+# textdomain:library
+
+Bookshelf=Libreria
+Nonfiction @1=@1 di libri non di fantasia
+Old @1=@1 vecchia
+Empty @1=@1 vuoto/a
+Shelf=Scaffale
+Antique Bookshelf Top=Parte superiore della libreria antica
+Antique Bookshelf=Libreria antica
+Corner=Angolo
+Inside Corner=Angolo interno
+Card Catalogue=Schedario
+Red @1=@1 rosso
+Green @1=@1 verde
+Cyan @1=@1 ciano
+Purple @1=@1 purpureo
+Black @1=@1 nero
+Orange @1=@1 arancione
+Brown @1=@1 marrone
+ by = di 
+Book=Libro
+Book With Text=Libro con testo
+Wood Pulp=Polpa di legno
+Title:=Titolo:
+Contents:=Contenuto:
+Save=Salva
+by =di 
+Page =Pagina 
+ of = di 
+

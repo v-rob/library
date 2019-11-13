@@ -1,3 +1,7 @@
+
+-- Used for localization
+local S = minetest.get_translator()
+
 local bookshelf_formspec =
 	"size[8,7;]" ..
 	default.gui_bg ..
@@ -30,7 +34,7 @@ local function get_bookshelf_formspec(inv)
 end
 
 minetest.register_node("library:bookshelf_1", {
-	description = "Bookshelf",
+	description = S("Bookshelf"),
 	drawtype = "nodebox",
 	tiles = {"default_wood.png",
 			"default_wood.png",
@@ -99,7 +103,7 @@ minetest.register_node("library:bookshelf_1", {
 
 for i = 2, 4 do
 minetest.register_node("library:bookshelf_"..i, {
-	description = "Bookshelf",
+	description = S("Bookshelf"),
 	drawtype = "nodebox",
 	tiles = {"default_wood.png",
 			"default_wood.png",
@@ -163,7 +167,7 @@ minetest.register_node("library:bookshelf_"..i, {
 end
 
 minetest.register_node("library:nonfiction_bookshelf_1", {
-	description = "Nonfiction Bookshelf",
+	description = S("Nonfiction @1", S("Bookshelf")),
 	drawtype = "nodebox",
 	tiles = {"default_wood.png",
 			"default_wood.png",
@@ -232,7 +236,7 @@ minetest.register_node("library:nonfiction_bookshelf_1", {
 
 for i = 2, 3 do
 minetest.register_node("library:nonfiction_bookshelf_"..i, {
-	description = "Nonfiction Bookshelf",
+	description = S("Nonfiction @1", S("Bookshelf")),
 	drawtype = "nodebox",
 	tiles = {"default_wood.png",
 			"default_wood.png",
@@ -296,7 +300,7 @@ minetest.register_node("library:nonfiction_bookshelf_"..i, {
 end
 
 minetest.register_node("library:empty_bookshelf_1", {
-	description = "Old Bookshelf",
+	description = S("Old @1", S("Bookshelf")),
 	drawtype = "nodebox",
 	tiles = {"default_wood.png",
 			"default_wood.png",
@@ -365,7 +369,7 @@ minetest.register_node("library:empty_bookshelf_1", {
 
 for i = 2, 6 do
 minetest.register_node("library:empty_bookshelf_"..i, {
-	description = "Old Bookshelf",
+	description = S("Old @1", S("Bookshelf")),
 	drawtype = "nodebox",
 	tiles = {"default_wood.png",
 			"default_wood.png",
@@ -429,7 +433,7 @@ minetest.register_node("library:empty_bookshelf_"..i, {
 end
 
 minetest.register_node("library:empty_bookshelf", {
-	description = "Empty Bookshelf",
+	description = S("Empty @1", S("Bookshelf")),
 	drawtype = "nodebox",
 	tiles = {"default_wood.png",
 			"default_wood.png",
@@ -491,7 +495,7 @@ minetest.register_node("library:empty_bookshelf", {
 })
 
 minetest.register_node("library:empty_shelf", {
-	description = "Empty Shelf",
+	description = S("Empty @1", S("Shelf")),
 	drawtype = "nodebox",
 	tiles = {"default_wood.png",
 			"default_wood.png",
@@ -553,7 +557,7 @@ minetest.register_node("library:empty_shelf", {
 })
 
 minetest.register_node("library:empty_shelf_2", {
-	description = "Empty Shelf",
+	description = S("Empty @1", S("Shelf")),
 	drawtype = "nodebox",
 	tiles = {"default_wood.png",
 			"default_wood.png",
@@ -615,7 +619,7 @@ minetest.register_node("library:empty_shelf_2", {
 })
 
 minetest.register_node("library:antique_bookshelf_1", {
-	description = "Antique Bookshelf Top",
+	description = S("Antique @1", S("Bookshelf Top")),
 	tiles = {"default_wood.png",
 			"default_wood.png",
 			"default_wood.png",
@@ -676,7 +680,7 @@ minetest.register_node("library:antique_bookshelf_1", {
 })
 
 minetest.register_node("library:antique_bookshelf_2", {
-	description = "Antique Bookshelf",
+	description = S("Antique", S("Bookshelf")),
 	tiles = {"default_wood.png",
 			"default_wood.png",
 			"default_wood.png",
@@ -732,7 +736,7 @@ minetest.register_node("library:antique_bookshelf_2", {
 })
 
 minetest.register_node("library:antique_bookshelf_3", {
-	description = "Antique Bookshelf",
+	description = S("Antique", S("Bookshelf")),
 	tiles = {"default_wood.png",
 			"default_wood.png",
 			"default_wood.png",
@@ -793,7 +797,7 @@ minetest.register_node("library:antique_bookshelf_3", {
 })
 
 minetest.register_node("library:antique_bookshelf_4", {
-	description = "Antique Bookshelf",
+	description = S("Antique", S("Bookshelf")),
 	tiles = {"default_wood.png",
 			"default_wood.png",
 			"default_wood.png",
@@ -849,7 +853,7 @@ minetest.register_node("library:antique_bookshelf_4", {
 })
 
 minetest.register_node("library:corner", {
-	description = "Corner",
+	description = S("Corner"),
 	drawtype = "nodebox",
 	tiles = {"default_wood.png"},
 	paramtype = "light",
@@ -868,7 +872,7 @@ minetest.register_node("library:corner", {
 })
 
 minetest.register_node("library:inside_corner", {
-	description = "Inside Corner",
+	description = S("Inside Corner"),
 	drawtype = "nodebox",
 	tiles = {"default_wood.png"},
 	paramtype = "light",
@@ -890,7 +894,7 @@ local CATALOGUE_FORMNAME = "library:catalogue_form"
 local player_catalogue = {}
 
 minetest.register_node("library:card_catalogue", {
-	description = "Card Catalogue",
+	description = S("Card Catalogue"),
 	tiles = {"library_card_catalogue_top.png",
 			"library_card_catalogue_top.png",
 			"library_card_catalogue_top.png",
@@ -964,7 +968,7 @@ minetest.register_node("library:card_catalogue", {
 						minetest.formspec_escape(text2).."]"..
 					"field[5,1;1,0;text3;Sec.;"..
 						minetest.formspec_escape(text3).."]"..
-					
+
 					"field[0.5,2;4.5,0;text4;;"..
 						minetest.formspec_escape(text4).."]"..
 					"field[7,2;1,0;text5;;"..
@@ -973,7 +977,7 @@ minetest.register_node("library:card_catalogue", {
 						minetest.formspec_escape(text6).."]"..
 					"field[5,2;1,0;text7;;"..
 						minetest.formspec_escape(text7).."]"..
-					
+
 					"field[0.5,3;4.5,0;text8;;"..
 						minetest.formspec_escape(text8).."]"..
 					"field[7,3;1,0;text9;;"..
@@ -982,7 +986,7 @@ minetest.register_node("library:card_catalogue", {
 						minetest.formspec_escape(text10).."]"..
 					"field[5,3;1,0;text11;;"..
 						minetest.formspec_escape(text11).."]"..
-					
+
 					"field[0.5,4;4.5,0;text12;;"..
 						minetest.formspec_escape(text12).."]"..
 					"field[7,4;1,0;text13;;"..
@@ -991,7 +995,7 @@ minetest.register_node("library:card_catalogue", {
 						minetest.formspec_escape(text14).."]"..
 					"field[5,4;1,0;text15;;"..
 						minetest.formspec_escape(text15).."]"..
-					
+
 					"field[0.5,5;4.5,0;text16;;"..
 						minetest.formspec_escape(text16).."]"..
 					"field[7,5;1,0;text17;;"..
@@ -1000,7 +1004,7 @@ minetest.register_node("library:card_catalogue", {
 						minetest.formspec_escape(text18).."]"..
 					"field[5,5;1,0;text19;;"..
 						minetest.formspec_escape(text19).."]"..
-					
+
 					"field[0.5,6;4.5,0;text20;;"..
 						minetest.formspec_escape(text20).."]"..
 					"field[7,6;1,0;text21;;"..
@@ -1009,7 +1013,7 @@ minetest.register_node("library:card_catalogue", {
 						minetest.formspec_escape(text22).."]"..
 					"field[5,6;1,0;text23;;"..
 						minetest.formspec_escape(text23).."]"..
-					
+
 					"field[8.5,1;4.5,0;text24;Description;"..
 						minetest.formspec_escape(text24).."]"..
 					"field[15,1;1,0;text25;Sec.;"..
@@ -1018,7 +1022,7 @@ minetest.register_node("library:card_catalogue", {
 						minetest.formspec_escape(text26).."]"..
 					"field[13,1;1,0;text27;Col.;"..
 						minetest.formspec_escape(text27).."]"..
-					
+
 					"field[8.5,2;4.5,0;text28;;"..
 						minetest.formspec_escape(text28).."]"..
 					"field[15,2;1,0;text29;;"..
@@ -1027,7 +1031,7 @@ minetest.register_node("library:card_catalogue", {
 						minetest.formspec_escape(text30).."]"..
 					"field[13,2;1,0;text31;;"..
 						minetest.formspec_escape(text31).."]"..
-					
+
 					"field[8.5,3;4.5,0;text32;;"..
 						minetest.formspec_escape(text32).."]"..
 					"field[15,3;1,0;text33;;"..
@@ -1036,7 +1040,7 @@ minetest.register_node("library:card_catalogue", {
 						minetest.formspec_escape(text34).."]"..
 					"field[13,3;1,0;text35;;"..
 						minetest.formspec_escape(text35).."]"..
-					
+
 					"field[8.5,4;4.5,0;text36;;"..
 						minetest.formspec_escape(text36).."]"..
 					"field[15,4;1,0;text37;;"..
@@ -1045,7 +1049,7 @@ minetest.register_node("library:card_catalogue", {
 						minetest.formspec_escape(text38).."]"..
 					"field[13,4;1,0;text39;;"..
 						minetest.formspec_escape(text39).."]"..
-					
+
 					"field[8.5,5;4.5,0;text40;;"..
 						minetest.formspec_escape(text40).."]"..
 					"field[15,5;1,0;text41;;"..
@@ -1054,7 +1058,7 @@ minetest.register_node("library:card_catalogue", {
 						minetest.formspec_escape(text42).."]"..
 					"field[13,5;1,0;text43;;"..
 						minetest.formspec_escape(text43).."]"..
-					
+
 					"field[8.5,6;4.5,0;text44;;"..
 						minetest.formspec_escape(text44).."]"..
 					"field[15,6;1,0;text45;;"..
@@ -1064,7 +1068,7 @@ minetest.register_node("library:card_catalogue", {
 					"field[13,6;1,0;text47;;"..
 						minetest.formspec_escape(text47).."]"..
 					------------------------------------------------------
-					
+
 					"button_exit[6.5,7;3,1;save;Save]"
 			else
 				formspec = "size[16,8]"..default.gui_bg..default.gui_bg_img..
@@ -1077,7 +1081,7 @@ minetest.register_node("library:card_catalogue", {
 						minetest.formspec_escape(text2).."]"..
 					"field[5,1;1,0;text3;Sec.;"..
 						minetest.formspec_escape(text3).."]"..
-					
+
 					"field[0.5,2;4.5,0;text4;;"..
 						minetest.formspec_escape(text4).."]"..
 					"field[7,2;1,0;text5;;"..
@@ -1086,7 +1090,7 @@ minetest.register_node("library:card_catalogue", {
 						minetest.formspec_escape(text6).."]"..
 					"field[5,2;1,0;text7;;"..
 						minetest.formspec_escape(text7).."]"..
-					
+
 					"field[0.5,3;4.5,0;text8;;"..
 						minetest.formspec_escape(text8).."]"..
 					"field[7,3;1,0;text9;;"..
@@ -1095,7 +1099,7 @@ minetest.register_node("library:card_catalogue", {
 						minetest.formspec_escape(text10).."]"..
 					"field[5,3;1,0;text11;;"..
 						minetest.formspec_escape(text11).."]"..
-					
+
 					"field[0.5,4;4.5,0;text12;;"..
 						minetest.formspec_escape(text12).."]"..
 					"field[7,4;1,0;text13;;"..
@@ -1104,7 +1108,7 @@ minetest.register_node("library:card_catalogue", {
 						minetest.formspec_escape(text14).."]"..
 					"field[5,4;1,0;text15;;"..
 						minetest.formspec_escape(text15).."]"..
-					
+
 					"field[0.5,5;4.5,0;text16;;"..
 						minetest.formspec_escape(text16).."]"..
 					"field[7,5;1,0;text17;;"..
@@ -1113,7 +1117,7 @@ minetest.register_node("library:card_catalogue", {
 						minetest.formspec_escape(text18).."]"..
 					"field[5,5;1,0;text19;;"..
 						minetest.formspec_escape(text19).."]"..
-					
+
 					"field[0.5,6;4.5,0;text20;;"..
 						minetest.formspec_escape(text20).."]"..
 					"field[7,6;1,0;text21;;"..
@@ -1122,7 +1126,7 @@ minetest.register_node("library:card_catalogue", {
 						minetest.formspec_escape(text22).."]"..
 					"field[5,6;1,0;text23;;"..
 						minetest.formspec_escape(text23).."]"..
-					
+
 					"field[8.5,1;4.5,0;text24;Description;"..
 						minetest.formspec_escape(text24).."]"..
 					"field[15,1;1,0;text25;Sec.;"..
@@ -1131,7 +1135,7 @@ minetest.register_node("library:card_catalogue", {
 						minetest.formspec_escape(text26).."]"..
 					"field[13,1;1,0;text27;Col.;"..
 						minetest.formspec_escape(text27).."]"..
-					
+
 					"field[8.5,2;4.5,0;text28;;"..
 						minetest.formspec_escape(text28).."]"..
 					"field[15,2;1,0;text29;;"..
@@ -1140,7 +1144,7 @@ minetest.register_node("library:card_catalogue", {
 						minetest.formspec_escape(text30).."]"..
 					"field[13,2;1,0;text31;;"..
 						minetest.formspec_escape(text31).."]"..
-					
+
 					"field[8.5,3;4.5,0;text32;;"..
 						minetest.formspec_escape(text32).."]"..
 					"field[15,3;1,0;text33;;"..
@@ -1149,7 +1153,7 @@ minetest.register_node("library:card_catalogue", {
 						minetest.formspec_escape(text34).."]"..
 					"field[13,3;1,0;text35;;"..
 						minetest.formspec_escape(text35).."]"..
-					
+
 					"field[8.5,4;4.5,0;text36;;"..
 						minetest.formspec_escape(text36).."]"..
 					"field[15,4;1,0;text37;;"..
@@ -1158,7 +1162,7 @@ minetest.register_node("library:card_catalogue", {
 						minetest.formspec_escape(text38).."]"..
 					"field[13,4;1,0;text39;;"..
 						minetest.formspec_escape(text39).."]"..
-					
+
 					"field[8.5,5;4.5,0;text40;;"..
 						minetest.formspec_escape(text40).."]"..
 					"field[15,5;1,0;text41;;"..
@@ -1167,7 +1171,7 @@ minetest.register_node("library:card_catalogue", {
 						minetest.formspec_escape(text42).."]"..
 					"field[13,5;1,0;text43;;"..
 						minetest.formspec_escape(text43).."]"..
-					
+
 					"field[8.5,6;4.5,0;text44;;"..
 						minetest.formspec_escape(text44).."]"..
 					"field[15,6;1,0;text45;;"..
@@ -1397,14 +1401,14 @@ minetest.register_on_player_receive_fields(function(player, formname, fields)
 end)
 
 minetest.register_craftitem("library:book_"..color, {
-	description = color.." Book",
+	description = color..S(" Book"),
 	inventory_image = "library_book_"..color..".png",
 	groups = {book = 1, flammable = 3},
 	on_use = book_on_use,
 })
 
 minetest.register_craftitem("library:book_"..color.."_written", {
-	description = color.." Book With Text",
+	description = color..S(" Book With Text"),
 	inventory_image = "library_book_"..color.."_written.png",
 	groups = {book = 1, not_in_creative_inventory = 1, flammable = 3},
 	stack_max = 1,
@@ -1412,7 +1416,7 @@ minetest.register_craftitem("library:book_"..color.."_written", {
 })
 
 minetest.register_craftitem("library:wood_pulp", {
-	description = "Wood Pulp",
+	description = S("Wood Pulp"),
 	inventory_image = "library_wood_pulp.png",
 	groups = {flammable = 3},
 })
